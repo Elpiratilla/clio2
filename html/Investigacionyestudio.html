@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investigaciones · Clio</title>
+    <link rel="stylesheet" href="../css/clio-styles.css" />
+    <link rel="stylesheet" href="../css/subpages-style.css" />
+    <style>
+        .investigaciones-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 25px 0 10px;
+        }
+
+        .investigacion-card {
+            background: var(--fondo-tarjeta);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            border: 1px solid rgba(124, 92, 255, 0.12);
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .investigacion-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primario);
+            transition: 0.4s;
+        }
+
+        .investigacion-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primario);
+            box-shadow: 0 15px 40px rgba(124, 92, 255, 0.20);
+        }
+
+        .investigacion-card:hover::before {
+            width: 6px;
+        }
+
+        .investigacion-card .header-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 4px;
+        }
+
+        .investigacion-card .header-card .icono {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            background: rgba(124, 92, 255, 0.10);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .investigacion-card:hover .header-card .icono {
+            background: var(--primario);
+        }
+
+        .investigacion-card .header-card .icono img {
+            zoom: 2.5;
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .investigacion-card:hover .header-card .icono img {
+            opacity: 1;
+        }
+
+        .investigacion-card .header-card h3 {
+            font-size: 18px;
+            color: var(--texto-principal);
+            margin: 0;
+        }
+
+        .investigacion-card .tipo {
+            display: inline-block;
+            background: rgba(124, 92, 255, 0.10);
+            color: var(--primario);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            align-self: flex-start;
+        }
+
+        .investigacion-card p {
+            color: var(--texto-secundario);
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 4px 0 0;
+        }
+
+        .investigacion-card .enlace-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primario);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 8px;
+            transition: 0.3s;
+            align-self: flex-start;
+        }
+
+        .investigacion-card .enlace-card:hover {
+            color: var(--primario-claro);
+            gap: 14px;
+        }
+
+        .investigacion-card .enlace-card .flecha {
+            transition: 0.3s;
+        }
+
+        .investigacion-card .enlace-card:hover .flecha {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 700px) {
+            .investigaciones-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../img/recursos/dibujo logo CLIO NUEVO.svg" alt="Logo Clio" class="logo-img" />
+            <a href="inicio.html" class="brand">Clio</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="riesgos.html">Riesgos</a></li>
+            <li><a href="consejos.html">Consejos</a></li>
+            <li><a href="recursos.html" class="active">Recursos</a></li>
+        </ul>
+        <a href="login.html" class="btn-login">Iniciar sesión</a>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="main-container">
+        <div class="content-card">
+            <h1><span>Investigaciones en El Salvador</span></h1>
+
+            <div class="intro-guia">
+                <p>
+                    La investigación sobre el impacto de las redes sociales y la tecnología en la salud mental está creciendo en El Salvador. Estas son algunas de las fuentes locales más relevantes.
+                </p>
+            </div>
+
+            <!-- Grid de investigaciones -->
+            <div class="investigaciones-grid">
+
+                <!-- Investigación 1: UCA -->
+                <div class="investigacion-card">
+                    <div class="header-card">
+                        <div class="icono">
+                            <img src="../img/recursos/icon-uca.png" alt="UCA" />
+                        </div>
+                        <h3>UCA · Observatorio de Juventud</h3>
+                    </div>
+                    <span class="tipo">Académico</span>
+                    <p>Investigaciones sobre el uso de tecnologías, redes sociales y su impacto en la juventud salvadoreña. Publican informes periódicos sobre hábitos digitales.</p>
+                    <a href="https://www.uca.edu.sv/" target="_blank" class="enlace-card">
+                        Visitar UCA <span class="flecha">→</span>
+                    </a>
+                </div>
+
+                <!-- Investigación 2: MINSAL -->
+                <div class="investigacion-card">
+                    <div class="header-card">
+                        <div class="icono">
+                            <img src="../img/recursos/icon-minsal.png" alt="MINSAL" />
+                        </div>
+                        <h3>MINSAL · Salud Mental</h3>
+                    </div>
+                    <span class="tipo">Gobierno</span>
+                    <p>Informes anuales sobre salud mental en El Salvador, incluyendo datos sobre ansiedad, depresión y trastornos relacionados con el uso de tecnología.</p>
+                    <a href="https://www.salud.gob.sv/" target="_blank" class="enlace-card">
+                        Visitar MINSAL <span class="flecha">→</span>
+                    </a>
+                </div>
+
+                <!-- Investigación 3: INJUVE -->
+                <div class="investigacion-card">
+                    <div class="header-card">
+                        <div class="icono">
+                            <img src="../img/recursos/icon-injuve.png" alt="INJUVE" />
+                        </div>
+                        <h3>INJUVE · Juventud y Tecnología</h3>
+                    </div>
+                    <span class="tipo">Gobierno</span>
+                    <p>Estudios sobre los hábitos de consumo digital de los jóvenes salvadoreños, tiempo de uso de redes sociales y percepción del bienestar digital.</p>
+                    <a href="https://www.injuve.gob.sv/" target="_blank" class="enlace-card">
+                        Visitar INJUVE <span class="flecha">→</span>
+                    </a>
+                </div>
+
+                <!-- Investigación 4: DIGESTYC -->
+                <div class="investigacion-card">
+                    <div class="header-card">
+                        <div class="icono">
+                            <img src="../img/recursos/icon-digestyc.png" alt="DIGESTYC" />
+                        </div>
+                        <h3>DIGESTYC · Hogares y Tecnología</h3>
+                    </div>
+                    <span class="tipo">Gobierno</span>
+                    <p>Encuestas periódicas sobre acceso a internet, uso de dispositivos y consumo de redes sociales en los hogares salvadoreños.</p>
+                    <a href="https://www.digestyc.gob.sv/" target="_blank" class="enlace-card">
+                        Visitar DIGESTYC <span class="flecha">→</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Consejo final -->
+            <div class="consejo-final">
+                <p>
+                    <strong>Recuerda:</strong> La investigación local es clave para entender el impacto de la tecnología en nuestra sociedad y tomar decisiones informadas.
+                </p>
+            </div>
+
+            <a href="recursos.html" class="back-link" style="margin-top: 30px;">← Volver a Recursos</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <ul class="footer-nav">
+            <li><a href="informacion.html">Sobre nosotros</a></li>
+            <li><a href="informacion.html">Privacidad</a></li>
+            <li><a href="informacion.html">Ayuda</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2026 Clio · Bienestar digital</p>
+    </footer>
+    <script src="../js/auth-ui.js"></script>
+</body>
+</html>

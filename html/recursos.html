@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clio · Recursos</title>
+    <link rel="stylesheet" href="../css/clio-styles.css">
+    <style>
+        .main-container {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        .left-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sub-tag {
+            color: var(--primario);
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .left-column h1 {
+            font-size: 44px;
+            line-height: 1.15;
+            color: var(--texto-principal);
+        }
+
+        .left-column h1 span {
+            color: var(--primario);
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            color: var(--texto-secundario);
+            max-width: 90%;
+            margin: 6px 0 12px;
+        }
+
+        .hero-image-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--fondo-tarjeta);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .tip-box {
+            background: var(--fondo-tarjeta);
+            border-radius: var(--radius);
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-left: 6px solid var(--primario);
+            margin-top: 6px;
+            box-shadow: var(--sombra);
+        }
+
+        .tip-icon {
+            zoom: 1.5;
+            width: 64px;
+            height: 64px;
+            flex-shrink: 0;
+            object-fit: contain;
+        }
+
+        .tip-text h4 {
+            color: var(--primario);
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+
+        .tip-text p {
+            font-size: 14px;
+            color: var(--texto-secundario);
+        }
+
+        .right-column {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: var(--texto-principal);
+            margin-bottom: 0;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 18px;
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .card {
+            background: var(--fondo-tarjeta);
+            border-radius: var(--radius);
+            padding: 16px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: var(--sombra);
+            border: 1px solid rgba(124, 92, 255, 0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(124, 92, 255, 0.30);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 4px;
+        }
+
+        .card-icon {
+            zoom: 2;
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+
+        .card h3 {
+            font-size: 15px;
+            color: var(--texto-principal);
+            font-weight: 700;
+        }
+
+        .card p {
+            font-size: 12px;
+            color: var(--texto-secundario);
+            margin: 4px 0 10px 0;
+            line-height: 1.4;
+            flex: 1;
+        }
+
+        .card-image {
+            display: flex;
+            justify-content: center;
+            margin: 6px 0 8px 0;
+        }
+
+        .card-image img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+        }
+
+        .card-link {
+            color: var(--primario);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 12px;
+            border-bottom: 1px solid transparent;
+            transition: border 0.2s;
+            align-self: flex-start;
+            padding: 2px 0;
+        }
+
+        .card-link:hover {
+            border-bottom-color: var(--primario);
+        }
+
+        .links-box {
+            background: var(--fondo-tarjeta);
+            border-radius: var(--radius);
+            padding: 16px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: var(--sombra);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .links-box h3 {
+            font-size: 16px;
+            color: var(--texto-principal);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .links-box h3::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .submenu-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .submenu-item h5 {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 1px;
+        }
+
+        .submenu-item h5 a {
+            color: var(--primario);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .submenu-item h5 a:hover {
+            color: var(--primario-claro);
+            text-decoration: underline;
+        }
+
+        .submenu-item p {
+            font-size: 11px;
+            color: var(--texto-secundario);
+            margin-top: 0;
+        }
+
+        .practicidad {
+            text-align: right;
+            margin-top: 4px;
+        }
+
+        .practicidad a {
+            background: transparent;
+            border: 1.5px solid var(--primario);
+            color: var(--primario);
+            padding: 4px 16px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            transition: background 0.2s, color 0.2s;
+            display: inline-block;
+        }
+
+        .practicidad a:hover {
+            background: var(--primario);
+            color: var(--texto-principal);
+        }
+
+        @media (max-width: 1024px) {
+            .main-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .left-column h1 {
+                font-size: 36px;
+            }
+            .hero-desc {
+                max-width: 100%;
+            }
+            .right-column {
+                width: 100%;
+            }
+            .tools-grid {
+                grid-template-columns: 1fr 1fr;
+                min-height: 300px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                min-height: auto;
+                gap: 14px;
+            }
+            .card, .links-box {
+                height: auto;
+                min-height: 140px;
+            }
+            .links-box {
+                grid-column: 1 / -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../img/recursos/dibujo logo CLIO NUEVO.svg" alt="Logo Clio" class="logo-img" />
+            <a href="inicio.html" class="brand">Clio</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="riesgos.html">Riesgos</a></li>
+            <li><a href="consejos.html">Consejos</a></li>
+            <li><a href="recursos.html" class="active">Recursos</a></li>
+        </ul>
+        <a href="login.html" class="btn-login">Iniciar sesión</a>
+    </nav>
+
+    <main class="main-container">
+        <section class="left-column">
+            <div>
+                <p class="sub-tag">Herramientas y apoyo</p>
+                <h1>Recursos para tu<br /><span>Bienestar Digital</span></h1>
+                <p class="hero-desc">
+                    Explora herramientas, enlaces y contenidos que puedan ayudarte a tener una relación más saludable con las redes sociales.
+                </p>
+            </div>
+            <div class="hero-image-container">
+                <img src="../img/recursos/imagen recursos.png" alt="Bienestar Digital" class="hero-img" />
+            </div>
+            <div class="tip-box">
+                <img src="../img/recursos/Icono.png" alt="Icono" class="tip-icon" />
+                <div class="tip-text">
+                    <h4>No estás solo</h4>
+                    <p>Pedir ayuda y buscar información es un acto de valentía y autocuidado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="right-column">
+            <h2 class="section-title">Herramientas Recomendadas</h2>
+            <div class="tip-box">
+                <p class="hero-desc" style="max-width:100%;">El contenido de este sitio web es puramente educativo e informativo y no sustituye la consulta, el diagnóstico o el tratamiento médico profesional.</p>
+            </div>
+            <div class="tools-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="../img/recursos/bienestarmental .png" alt="imagen que representa el bienestar mental" class="card-icon" />
+                        <h3>Bienestar mental</h3>
+                    </div>
+                    <p>Explora herramientas, enlaces y contenidos que puedan ayudarte a tener una relación</p>
+                    <div class="card-image">
+                        <img src="../img/recursos/bienestarmental .png" alt="Bienestar mental" />
+                    </div>
+                    <a href="bienestarmental.html" class="card-link">Ver herramientas →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <img src="../img/recursos/Enfoque.png" alt="enfoque" class="card-icon" />
+                        <h3>Enfoque y concentración</h3>
+                    </div>
+                    <p>Explora herramientas, enlaces y contenidos que puedan ayudarte a tener una relación</p>
+                    <div class="card-image">
+                        <img src="../img/recursos/Enfoque.png" alt="Enfoque" />
+                    </div>
+                    <a href="enfoque.html" class="card-link">Ver herramientas →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <img src="../img/recursos/controldetiempo.png" alt="tiempo" class="card-icon" />
+                        <h3>Control de tiempo</h3>
+                    </div>
+                    <p>Explora herramientas, enlaces y contenidos que puedan ayudarte a tener una relación</p>
+                    <div class="card-image">
+                        <img src="../img/recursos/controldetiempo.png" alt="Control de tiempo" />
+                    </div>
+                    <a href="controldetiempo.html" class="card-link">Ver herramientas →</a>
+                </div>
+
+                <div class="links-box">
+                    <h3>Enlaces y apoyo</h3>
+                    <ul class="submenu-list">
+                        <li class="submenu-item">
+                            <h5><a href="Contactos.html">Contactos nacionales de apoyo</a></h5>
+                            <p>Apoyo gratuito y confidencial 24/7</p>
+                        </li>
+                        <li class="submenu-item">
+                            <h5><a href="Consejos-recursos.html">Consejos basicos para padres de familia</a></h5>
+                            <p>Consejos para acompañar a tus hijos en el mundo digital</p>
+                        </li>
+                        <li class="submenu-item">
+                            <h5><a href="Organizaciones.html">Organizaciones recomendadas</a></h5>
+                            <p>Conoce organizaciones que promueven el bienestar digital</p>
+                        </li>
+                        <li class="submenu-item">
+                            <h5><a href="Investigacionyestudio.html">Investigaciones y estudios</a></h5>
+                            <p>Artículos y estudios sobre el impacto de las redes sociales</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="practicidad">
+                <a href="#">Prácticidad →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <ul class="footer-nav">
+            <li><a href="informacion.html">Sobre nosotros</a></li>
+            <li><a href="informacion.html">Privacidad</a></li>
+            <li><a href="informacion.html">Ayuda</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2026 Clio · Bienestar digital</p>
+    </footer>
+    <script src="../js/auth-ui.js"></script>
+</body>
+</html>

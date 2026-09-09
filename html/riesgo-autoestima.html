@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baja autoestima · Clio</title>
+    <link rel="stylesheet" href="../css/clio-styles.css" />
+    <link rel="stylesheet" href="../css/estilos-riesgos-sub.css" />
+    <style>
+        .imagen-riesgo {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 22px;
+            margin: 8px 0 30px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(124, 92, 255, 0.14), rgba(124, 92, 255, 0.04));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-align: center;
+            box-shadow: var(--sombra, 0 8px 25px rgba(0, 0, 0, 0.06));
+        }
+        .imagen-riesgo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .imagen-riesgo .placeholder-icono {
+            font-size: 34px;
+            opacity: 0.55;
+        }
+        .imagen-riesgo .placeholder-texto {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primario, #7C5CFF);
+            opacity: 0.8;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../img/dibujo logo CLIO NUEVO.svg" alt="Logo Clio" class="logo-img" />
+            <a href="inicio.html" class="brand">Clio</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="riesgos.html" class="active">Riesgos</a></li>
+            <li><a href="consejos.html">Consejos</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+        </ul>
+        <a href="login.html" class="btn-login">Iniciar sesión</a>
+    </nav>
+
+    <main class="main-container">
+        <div class="content-card">
+            <h1><span>Baja autoestima</span></h1>
+            <p>
+                Las redes sociales suelen mostrar solo los mejores momentos de la vida. Compararte constantemente con ese contenido puede hacerte sentir que tu vida real no es suficiente.
+            </p>
+
+            <div class="imagen-riesgo">
+                     <img src="../img/autoestima.png" alt="Baja autoestima" /> 
+            </div>
+
+            <div class="tip-destacado">
+                <div class="tip-icono">
+                    <img src="../img/icon-tip.png" alt="Tip del día" />
+                </div>
+                <div>
+                    <h3>Tip del día</h3>
+                    <p><strong>Recuerda que las redes son un resumen, no la realidad completa.</strong> Nadie publica sus días malos con la misma frecuencia que sus logros. Compararte con ese resumen no es justo.</p>
+                </div>
+            </div>
+
+            <div class="seccion-titulo">
+                <div class="icono-titulo">
+                    <img src="../img/icon-alerta.png" alt="Señales de alerta" />
+                </div>
+                <span>Señales de alerta</span>
+            </div>
+
+            <div class="riesgos-grid">
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/comparacion.png" alt="Comparación" /></div>
+                            <h3>Comparación constante</h3>
+                            <p class="descripcion">Mides tu vida contra lo que ves en las cuentas de otros.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Pregúntate si esa publicación muestra la vida completa o solo un momento elegido a propósito.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/aprobacion.png" alt="Aprobación" /></div>
+                            <h3>Dependencia de la aprobación</h3>
+                            <p class="descripcion">Tu estado de ánimo depende de los likes que recibes.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Publica sin revisar las notificaciones inmediatamente. Practica notar cómo te sientes antes de ver la reacción de los demás.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/imagen-corporal.png" alt="Imagen corporal" /></div>
+                            <h3>Insatisfacción con tu imagen</h3>
+                            <p class="descripcion">Después de ver fotos editadas, sientes incomodidad con tu cuerpo.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Sigue cuentas que muestren contenido más real y menos editado. Reducir la exposición ayuda a que tu percepción sea más realista.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/autocritica.png" alt="Autocrítica" /></div>
+                            <h3>Autocrítica frecuente</h3>
+                            <p class="descripcion">Te hablas de forma dura después de navegar en redes.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Anota una cosa que hiciste bien cada día. Entrenar la atención hacia lo positivo se vuelve más natural con práctica.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="riesgos.html" class="back-link">← Volver a Riesgos</a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <ul class="footer-nav">
+            <li><a href="informacion.html">Sobre nosotros</a></li>
+            <li><a href="informacion.html">Privacidad</a></li>
+            <li><a href="informacion.html">Ayuda</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2026 Clio · Bienestar digital</p>
+    </footer>
+    <script src="../js/auth-ui.js"></script>
+</body>
+</html>

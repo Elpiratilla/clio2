@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Clio · Información</title>
+    <link rel="stylesheet" href="../css/clio-styles.css">
+    <style>
+        .main-content {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 8rem 2rem 3rem;
+            flex: 1;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-card {
+            background: var(--fondo-tarjeta);
+            border-radius: 3rem;
+            padding: 3rem 2rem;
+            box-shadow: var(--sombra);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(124, 92, 255, 0.15);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h2 {
+            font-family: 'Segoe UI', 'Fredoka', system-ui, sans-serif;
+            font-size: 2.3rem;
+            text-align: center;
+            color: var(--primario);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            font-size: 1.05rem;
+            font-weight: 500;
+            text-align: justify;
+            color: var(--texto-secundario);
+        }
+
+        .info-card ul {
+            padding-left: 1rem;
+            list-style-type: none;
+        }
+
+        .info-card li {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--texto-secundario);
+        }
+
+        .info-card li strong {
+            color: var(--texto-principal);
+            font-weight: 700;
+        }
+
+        .faq-block {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .faq-item {
+            font-size: 1.05rem;
+            color: var(--texto-secundario);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: var(--texto-principal);
+        }
+
+        .faq-answer {
+            font-weight: 500;
+            margin-top: 0.2rem;
+        }
+
+        @media (max-width: 1100px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .main-content {
+                padding: 8rem 1rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../img/dibujo logo CLIO NUEVO.svg" alt="Logo Clio" class="logo-img" />
+            <a href="inicio.html" class="brand">Clio</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="riesgos.html">Riesgos</a></li>
+            <li><a href="consejos.html">Consejos</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+        </ul>
+        <a href="login.html" class="btn-login">Iniciar sesión</a>
+    </nav>
+
+    <div class="main-content">
+        <div class="info-grid">
+            <div class="info-card">
+                <h2>Sobre Nosotros</h2>
+                 <p>Clio nació con una misión clara: combatir los riesgos del uso excesivo de las redes sociales, ofreciendo un refugio de entretenimiento saludable y estimulación mental. Somos un equipo apasionado por la tecnología que busca concientizar sobre cómo el scroll infinito, la adicción al contenido irrelevante y la sobreexposición digital dañan el desarrollo emocional y el funcionamiento diario de las personas en la sociedad.</p>
+                <p>Creemos que la clave para mitigar estos daños psicológicos está en cambiar nuestros hábitos digitales. Por eso, en lugar de perder el tiempo en plataformas diseñadas para atrapar tu atención, en Clio te invitamos a ejercitar tu mente.</p>
+                <p>Nuestro nombre honra a Clío, la musa de la historia en la mitología griega, porque sabemos que entender el pasado y aprender a gestionar nuestro presente digital es el único camino para proteger nuestro bienestar y construir un futuro brillante.</p>
+
+            </div>
+
+            <div class="info-card">
+                <h2>Privacidad</h2>
+                <p>En Clio valoramos tu privacidad. Toda la información que compartes con nosotros está protegida y nunca será vendida a terceros.</p>
+                <ul>
+                    <li>• <strong>Datos personales:</strong> Solo recopilamos los datos necesarios para tu registro (nombre, correo, etc.) y para mejorar tu experiencia.</li>
+                    <li>• <strong>Seguridad:</strong> Utilizamos medidas de encriptación y almacenamiento local para que tus datos estén seguros.</li>
+                    <li>• <strong>Cookies:</strong> Este sitio utiliza cookies técnicas para recordar tu sesión; no usamos rastreadores externos.</li>
+                    <li>• <strong>Control:</strong> Puedes solicitar la eliminación de tu cuenta en cualquier momento escribiéndonos a soporte@clio.com.</li>
+                </ul>
+
+            </div>
+
+            <div class="info-card">
+                <h2>Ayuda</h2>
+                <div class="faq-block">
+                    <div class="faq-item">
+                         <div class="faq-question">¿Cómo creo una cuenta?</div>
+                        <div class="faq-answer">Para crear una cuenta, selecciona la opción "Registrarse" y completa los datos solicitados. Al finalizar, podrás iniciar sesión y comenzar a utilizar las funciones de Clio.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">¿Cómo puedo iniciar sesión?</div>
+                        <div class="faq-answer">Ingresa el correo y la contraseña con los que te registraste y selecciona "Iniciar sesión". Si los datos son correctos, accederás a tu cuenta.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">¿Puedo cerrar mi sesión?</div>
+                        <div class="faq-answer">Sí. Puedes cerrar sesión desde el menú de tu perfil para proteger tu cuenta y de la misma forma volver a ingresar desde la cuenta que cerrastes sesión</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">¿Necesito descargar Clio?</div>
+                        <div class="faq-answer">No necesariamente. Al tratarse de una plataforma web, puedes acceder desde tu navegador.</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <ul class="footer-nav">
+            <li><a href="informacion.html">Sobre nosotros</a></li>
+            <li><a href="informacion.html">Privacidad</a></li>
+            <li><a href="informacion.html">Ayuda</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2026 Clio · Bienestar digital</p>
+    </footer>
+    <script src="../js/auth-ui.js"></script>
+</body>
+</html>

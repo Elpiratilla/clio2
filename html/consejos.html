@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clio · Consejos</title>
+    <link rel="stylesheet" href="../css/clio-styles.css">
+
+    <style>
+        body {
+            padding-top: 80px;
+        }
+
+        .contenido {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 80px 70px;
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .icono img {
+            zoom: 2;
+            width: 38px;
+            height: 38px;
+            object-fit: contain;
+        }
+
+        .texto {
+            width: 45%;
+            position: relative;
+        }
+
+        .texto span {
+            color: var(--primario);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .texto h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin: 20px 0;
+            font-weight: 700;
+        }
+
+        .texto h1 b {
+            color: var(--primario);
+        }
+
+        .texto p {
+            color: var(--texto-secundario);
+            width: 90%;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .imagen {
+            margin-top: 12px;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 25px;
+            box-shadow: var(--sombra);
+        }
+
+        .imagen img {
+            border-radius: 25px;
+            transition: transform 0.4s;
+            width: 100%;
+            display: block;
+        }
+
+        .imagen img:hover {
+            transform: scale(1.03);
+        }
+
+        .tarjetas {
+            width: 50%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: var(--fondo-tarjeta);
+            padding: 25px;
+            border-radius: var(--radius);
+            min-height: 200px;
+            border: 1px solid rgba(124, 92, 255, 0.15);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            background: #152d54;
+            box-shadow: var(--sombra);
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--texto-secundario);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .card details {
+            margin-top: 15px;
+        }
+.card summary {
+    color: var(--primario);
+    font-size: 0;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.card summary::-webkit-details-marker {
+    display: none;
+}
+
+.card summary::before {
+    content: "Ver más";
+    font-size: 14px;
+}
+
+.card summary::after {
+    content: " +";
+    font-size: 18px;
+}
+
+.card details[open] summary::before {
+    content: "Ver menos";
+}
+
+.card details[open] summary::after {
+    content: " −";
+}
+
+        .card summary:hover {
+            color: #a58cff;
+        }
+
+        .info-extra {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(124, 92, 255, 0.25);
+        }
+
+        .info-extra p {
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1000px) {
+            .contenido {
+                flex-direction: column;
+                padding: 40px 30px;
+            }
+
+            .texto {
+                width: 100%;
+                text-align: center;
+            }
+
+            .texto h1 {
+                font-size: 42px;
+            }
+
+            .texto p {
+                width: 100%;
+            }
+
+            .persona {
+                width: 220px;
+            }
+
+            .tarjetas {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .tarjetas {
+                grid-template-columns: 1fr;
+            }
+
+            .texto h1 {
+                font-size: 32px;
+            }
+
+            .contenido {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo-container">
+            <img src="../img/dibujo logo CLIO NUEVO.svg" alt="Logo Clio" class="logo-img">
+            <a href="inicio.html" class="brand">Clio</a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="riesgos.html">Riesgos</a></li>
+            <li><a href="consejos.html" class="active">Consejos</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+        </ul>
+
+        <a href="login.html" class="btn-login">Iniciar sesión</a>
+
+    </nav>
+
+
+    <main>
+
+        <section class="contenido">
+
+            <div class="texto">
+
+                <span>Clio y Consejos</span>
+
+                <h1>
+                    Consejos para un
+                    <br>
+                    <b>Uso Consciente</b>
+                </h1>
+
+                <p>
+                    Pequeñas acciones diarias pueden ayudarte a mantener un
+                    equilibrio saludable con las redes sociales.
+                </p>
+
+                <img
+                    class="imagen"
+                    src="../img/meditacion.png"
+                    alt="Meditación"
+                >
+
+            </div>
+
+
+            <div class="tarjetas">
+
+
+                <div class="card">
+
+                    <div class="icono">
+                        <img src="../img/tiempo.png" alt="imagen de reloj">
+                    </div>
+
+                    <h3>Establece límites de tiempo</h3>
+
+                    <p>
+                        Define cuánto tiempo vas a pasar en tus redes sociales cada día.
+                    </p>
+
+                    <details>
+                        <summary>Ver más</summary>
+
+                        <div class="info-extra">
+                            <p>
+                                Establecer un horario puede ayudarte a evitar pasar
+                                demasiado tiempo conectado. Puedes decidir momentos
+                                específicos para revisar tus redes y tomar descansos
+                                durante el día.
+                            </p>
+                        </div>
+
+                    </details>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icono">
+                        <img src="../img/avisos.png" alt="imagen de campana">
+                    </div>
+
+                    <h3>Activa avisos conscientes</h3>
+
+                    <p>
+                        Desactiva notificaciones que no son relevantes para evitar distracciones.
+                    </p>
+
+                    <details>
+                        <summary>Ver más</summary>
+
+                        <div class="info-extra">
+                            <p>
+                                No todas las notificaciones son importantes.
+                                Mantener solamente las necesarias puede ayudarte
+                                a concentrarte mejor en tus actividades y evitar
+                                revisar el celular constantemente.
+                            </p>
+                        </div>
+
+                    </details>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icono">
+                        <img src="../img/seguircuentas.png" alt="logo de seguir cuentas">
+                    </div>
+
+                    <h3>Sigue cuentas que te inspiren</h3>
+
+                    <p>
+                        Rodéate de contenido positivo, educativo y motivador.
+                    </p>
+
+                    <details>
+                        <summary>Ver más</summary>
+
+                        <div class="info-extra">
+                            <p>
+                                Revisa las cuentas que sigues y pregúntate si su
+                                contenido te aporta algo positivo. También puedes
+                                dejar de seguir contenido que te genere estrés,
+                                presión o desánimo.
+                            </p>
+                        </div>
+
+                    </details>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icono">
+                        <img src="../img/conectaconlavida.png" alt="Personas socializando">
+                    </div>
+
+                    <h3>Conecta en la vida real</h3>
+
+                    <p>
+                        No olvides compartir tiempo con las personas importantes.
+                    </p>
+
+                    <details>
+                        <summary>Ver más</summary>
+
+                        <div class="info-extra">
+                            <p>
+                                Las redes sociales pueden ser una forma de
+                                comunicarnos, pero no deben reemplazar completamente
+                                los momentos con familiares y amigos. Compartir
+                                tiempo cara a cara también fortalece nuestras
+                                relaciones.
+                            </p>
+                        </div>
+
+                    </details>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icono">
+                        <img src="../img/Definirmeta.png" alt="imagen de montaña con bandera al final">
+                    </div>
+
+                    <h3>Define tu propósito</h3>
+
+                    <p>
+                        Usa las redes sociales con un objetivo claro.
+                    </p>
+
+                    <details>
+                        <summary>Ver más</summary>
+
+                        <div class="info-extra">
+                            <p>
+                                Antes de entrar a una red social, piensa qué quieres
+                                hacer: informarte, comunicarte, aprender o entretenerte.
+                                Tener un propósito ayuda a evitar entrar por costumbre
+                                y quedarse conectado sin darse cuenta.
+                            </p>
+                        </div>
+
+                    </details>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icono">
+                        <img src="../img/selectivoconinformacion.png" alt="Información con lupa">
+                    </div>
+
+                    <h3>Sé selectivo con la información</h3>
+
+                    <p>
+                        No todo lo que ves es real. Aprende a cuestionar.
+                    </p>
+
+                    <details>
+                        <summary>Ver más</summary>
+
+                        <div class="info-extra">
+                            <p>
+                                Antes de compartir una publicación, revisa de dónde
+                                viene la información y si otras fuentes confiables
+                                dicen lo mismo. Esto ayuda a evitar la desinformación
+                                y a desarrollar un pensamiento más crítico.
+                            </p>
+                        </div>
+
+                    </details>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="main-footer">
+
+        <ul class="footer-nav">
+            <li><a href="informacion.html">Sobre nosotros</a></li>
+            <li><a href="informacion.html">Privacidad</a></li>
+            <li><a href="informacion.html">Ayuda</a></li>
+        </ul>
+
+        <p class="footer-copy">
+            &copy; 2026 Clio · Bienestar digital
+        </p>
+
+    </footer>
+
+    <script src="../js/auth-ui.js"></script>
+</body>
+</html>

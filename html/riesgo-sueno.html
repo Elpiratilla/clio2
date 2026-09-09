@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Problemas de sueño · Clio</title>
+    <link rel="stylesheet" href="../css/clio-styles.css" />
+    <link rel="stylesheet" href="../css/estilos-riesgos-sub.css" />
+    <style>
+        .imagen-riesgo {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 22px;
+            margin: 8px 0 30px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(124, 92, 255, 0.14), rgba(124, 92, 255, 0.04));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-align: center;
+            box-shadow: var(--sombra, 0 8px 25px rgba(0, 0, 0, 0.06));
+        }
+        .imagen-riesgo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .imagen-riesgo .placeholder-icono {
+            font-size: 34px;
+            opacity: 0.55;
+        }
+        .imagen-riesgo .placeholder-texto {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primario, #7C5CFF);
+            opacity: 0.8;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../img/dibujo logo CLIO NUEVO.svg" alt="Logo Clio" class="logo-img" />
+            <a href="inicio.html" class="brand">Clio</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="riesgos.html" class="active">Riesgos</a></li>
+            <li><a href="consejos.html">Consejos</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+        </ul>
+        <a href="login.html" class="btn-login">Iniciar sesión</a>
+    </nav>
+
+    <main class="main-container">
+        <div class="content-card">
+            <h1><span>Problemas de sueño</span></h1>
+            <p>
+                Usar el celular justo antes de dormir es uno de los hábitos que más afecta la
+                calidad del descanso. La luz azul de la pantalla retrasa la producción de
+                melatonina (la hormona que te da sueño), y el contenido que consumes mantiene
+                tu cerebro activo justo cuando debería estar relajándose.
+            </p>
+
+            <div class="imagen-riesgo">
+                     <img src="../img/sueño.jpeg" alt="Problemas de sueño" /> 
+            </div>
+
+            <div class="tip-destacado">
+                <div class="tip-icono">
+                    <img src="../img/icon-tip.png" alt="Tip del día" />
+                </div>
+                <div>
+                    <h3>Tip del día</h3>
+                    <p><strong>Establece una "hora de apagado" para las pantallas.</strong> Deja de usar el celular al menos 30 minutos antes de acostarte. Usa ese tiempo para leer, escuchar música tranquila o simplemente descansar la vista.</p>
+                </div>
+            </div>
+
+            <div class="seccion-titulo">
+                <div class="icono-titulo">
+                    <img src="../img/icon-alerta.png" alt="Señales de alerta" />
+                </div>
+                <span>Señales de alerta</span>
+            </div>
+
+            <div class="riesgos-grid">
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/dormir.png" alt="Dificultad para dormir" /></div>
+                            <h3>Dificultad para conciliar el sueño</h3>
+                            <p class="descripcion">Te cuesta quedarte dormido después de usar el celular en la cama.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Activa el modo nocturno o filtro de luz azul en tu celular después de las 8pm, y evita contenido emocionante justo antes de dormir.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/tiempo.png" alt="Perder la noción del tiempo" /></div>
+                            <h3>Perder la noción del tiempo</h3>
+                            <p class="descripcion">Empiezas a ver videos "solo un rato" y sin darte cuenta ya pasó una hora.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Pon una alarma de "hora de dejar el celular" además de la alarma para despertar. Cuando suene, cierra la app sin excepción.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/cansancio.png" alt="Cansancio al despertar" /></div>
+                            <h3>Cansancio al despertar</h3>
+                            <p class="descripcion">A pesar de haber dormido suficientes horas, te levantas cansado y sin energía.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>El descanso no solo depende de las horas dormidas, sino de la calidad del sueño. Reducir el uso del celular antes de dormir mejora esa calidad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/madrugada.png" alt="Revisar el celular de madrugada" /></div>
+                            <h3>Revisar el celular de madrugada</h3>
+                            <p class="descripcion">Te despiertas en la noche y revisas el celular, interrumpiendo el ciclo de sueño.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Carga el celular fuera del alcance de la cama, usando un despertador aparte si lo necesitas para la alarma de la mañana.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="riesgos.html" class="back-link">← Volver a Riesgos</a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <ul class="footer-nav">
+            <li><a href="informacion.html">Sobre nosotros</a></li>
+            <li><a href="informacion.html">Privacidad</a></li>
+            <li><a href="informacion.html">Ayuda</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2026 Clio · Bienestar digital</p>
+    </footer>
+    <script src="../js/auth-ui.js"></script>
+</body>
+</html>

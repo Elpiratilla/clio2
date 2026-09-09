@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clio · Inicio</title>
+    <link rel="stylesheet" href="../css/clio-styles.css">
+
+    <style>
+        body {
+            padding-top: 0;
+        }
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 8% 50px;
+            gap: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(124, 92, 255, 0.12);
+            border-radius: 50%;
+            filter: blur(100px);
+            right: 5%;
+            top: 10%;
+            z-index: -1;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: rgba(91, 65, 220, 0.08);
+            border-radius: 50%;
+            filter: blur(80px);
+            left: -80px;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        .hero-texto {
+            max-width: 590px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-texto span {
+            color: var(--primario);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .hero-texto h1 {
+            font-size: 60px;
+            margin: 15px 0;
+            line-height: 1.08;
+            font-weight: 700;
+        }
+
+        .hero-texto h2 {
+            color: var(--primario);
+            font-size: 34px;
+            margin-bottom: 22px;
+        }
+
+        .hero-texto p {
+            color: var(--texto-secundario);
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 530px;
+            margin-bottom: 28px;
+        }
+
+        .hero-indicador {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--texto-secundario);
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .hero-indicador span {
+            width: 9px;
+            height: 9px;
+            background: var(--primario);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(124, 92, 255, 0.8);
+        }
+
+        .mini-info {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .mini-box {
+            background: rgba(30, 45, 82, 0.75);
+            border: 1px solid rgba(124, 92, 255, 0.18);
+            padding: 12px 17px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            transition: 0.3s;
+        }
+
+        .mini-box:hover {
+            transform: translateY(-4px);
+        }
+
+        .mini-box i {
+            color: var(--primario);
+            font-size: 16px;
+        }
+
+        .mini-box strong {
+            font-size: 13px;
+            color: var(--texto-principal);
+        }
+
+        .hero-img {
+            width: 50%;
+            max-width: 650px;
+            position: relative;
+        }
+
+        .hero-img::before {
+            content: "";
+            position: absolute;
+            inset: 8%;
+            background: rgba(124, 92, 255, 0.18);
+            filter: blur(55px);
+            z-index: -1;
+        }
+
+        .hero-img img {
+            width: 100%;
+            display: block;
+            animation: flotar 4s ease-in-out infinite;
+        }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .cards-section {
+            padding: 90px 8% 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        .cards-section::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(124, 92, 255, 0.06);
+            border-radius: 50%;
+            filter: blur(80px);
+            left: 10%;
+            top: 20%;
+            z-index: -1;
+        }
+
+        .titulo-seccion {
+            color: var(--primario);
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cards-section h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .cards-section > p {
+            color: var(--texto-secundario);
+            margin: 0 auto 55px;
+            font-size: 16px;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .contenedor-cards-inicio {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1500px;
+            margin: auto;
+        }
+
+        /* TARJETAS DE INICIO */
+
+        .tarjeta-inicio {
+            height: 380px;
+            width: 100%;
+            perspective: 1000px;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+
+            /* EVITA CUALQUIER MOVIMIENTO */
+            position: relative;
+            top: 0 !important;
+            bottom: auto !important;
+            left: 0 !important;
+            right: auto !important;
+            margin: 0 !important;
+            transform: none !important;
+        }
+
+        .tarjeta-inicio:hover {
+            transform: none !important;
+            top: 0 !important;
+            bottom: auto !important;
+        }
+
+        .tarjeta-inicio:focus {
+            transform: none !important;
+            top: 0 !important;
+        }
+
+        .tarjeta-inicio:active {
+            transform: none !important;
+            top: 0 !important;
+        }
+
+        .interior-tarjeta-inicio {
+            position: absolute;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease;
+
+            /* NUNCA SE DESPLAZA */
+            transform-origin: center center;
+        }
+
+        .tarjeta-inicio:hover .interior-tarjeta-inicio {
+            transform: rotateY(180deg) !important;
+            top: 0 !important;
+            left: 0 !important;
+        }
+
+        .frente-inicio,
+        .atras-inicio {
+            position: absolute;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100%;
+            height: 100%;
+            border-radius: 22px;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 35px;
+            text-align: center;
+            box-sizing: border-box;
+            box-shadow: var(--sombra);
+            margin: 0 !important;
+        }
+
+        .frente-inicio {
+            background: var(--fondo-tarjeta);
+            color: var(--texto-principal);
+            border: 1px solid rgba(124, 92, 255, 0.15);
+            overflow: hidden;
+        }
+
+        .frente-inicio::before {
+            content: "";
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            background: rgba(124, 92, 255, 0.08);
+            border-radius: 50%;
+            top: -45px;
+            right: -35px;
+        }
+
+        .frente-inicio::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(124, 92, 255, 0.05);
+            border-radius: 50%;
+            bottom: -40px;
+            left: -25px;
+        }
+
+        .frente-inicio i {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background: rgba(124, 92, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            color: var(--primario);
+            margin-bottom: 25px;
+        }
+
+        .frente-inicio h3 {
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .frente-inicio p {
+            color: var(--texto-secundario);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .etiqueta-inicio {
+            margin-top: 22px;
+            color: var(--primario);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .etiqueta-inicio::after {
+            content: "  →";
+        }
+
+        .atras-inicio {
+            background: linear-gradient(135deg, #7c5cff, #5837d8);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .atras-inicio i {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .atras-inicio h3 {
+            font-size: 27px;
+            margin-bottom: 18px;
+        }
+
+        .atras-inicio p {
+            color: white;
+            line-height: 1.7;
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .card-explorar {
+            margin-top: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .card-explorar::after {
+            content: " →";
+        }
+
+        .mensaje-final {
+            margin: 20px auto 90px;
+            max-width: 900px;
+            background: var(--fondo-tarjeta);
+            border: 1px solid rgba(124, 92, 255, 0.18);
+            border-radius: 25px;
+            padding: 38px 45px;
+            text-align: center;
+            box-shadow: var(--sombra);
+        }
+
+        .mensaje-final i {
+            font-size: 30px;
+            color: var(--primario);
+            margin-bottom: 15px;
+        }
+
+        .mensaje-final h2 {
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        .mensaje-final p {
+            color: var(--texto-secundario);
+            line-height: 1.7;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        @media (max-width: 1200px) {
+
+            .hero-texto h1 {
+                font-size: 50px;
+            }
+
+            .contenedor-cards-inicio {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 850px) {
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 130px 5% 70px;
+            }
+
+            .hero-texto {
+                max-width: 100%;
+            }
+
+            .hero-texto p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-indicador {
+                justify-content: center;
+            }
+
+            .mini-info {
+                justify-content: center;
+            }
+
+            .hero-img {
+                width: 85%;
+                max-width: 550px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero {
+                padding: 110px 5% 50px;
+            }
+
+            .hero-texto h1 {
+                font-size: 36px;
+            }
+
+            .hero-texto h2 {
+                font-size: 24px;
+            }
+
+            .hero-texto span {
+                font-size: 16px;
+            }
+
+            .hero-texto p {
+                font-size: 15px;
+            }
+
+            .hero-img {
+                width: 100%;
+            }
+
+            .mini-info {
+                flex-direction: column;
+            }
+
+            .mini-box {
+                justify-content: center;
+            }
+
+            .cards-section {
+                padding: 65px 5% 80px;
+            }
+
+            .cards-section h2 {
+                font-size: 29px;
+            }
+
+            .contenedor-cards-inicio {
+                grid-template-columns: 1fr;
+            }
+
+            .tarjeta-inicio {
+                height: 350px;
+            }
+
+            .mensaje-final {
+                margin: 0 5% 70px;
+                padding: 30px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo-container">
+            <img src="../img/dibujo logo CLIO NUEVO.svg" alt="Logo Clio" class="logo-img">
+            <a href="inicio.html" class="brand">Clio</a>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="inicio.html" class="active">Inicio</a>
+            </li>
+
+            <li>
+                <a href="riesgos.html">Riesgos</a>
+            </li>
+
+            <li>
+                <a href="consejos.html">Consejos</a>
+            </li>
+
+            <li>
+                <a href="recursos.html">Recursos</a>
+            </li>
+
+        </ul>
+
+        <a href="login.html" class="btn-login">
+            Iniciar sesión
+        </a>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <div class="hero-texto">
+
+            <span>Conecta con lo que importa</span>
+
+            <h1>
+                Las redes sociales no
+                <br>
+                son el problema.
+            </h1>
+
+            <h2>
+                El uso excesivo sí.
+            </h2>
+
+            <p>
+                Las redes sociales forman parte de nuestra vida diaria,
+                pero aprender a utilizarlas de manera consciente puede
+                ayudarnos a encontrar un equilibrio entre nuestra vida
+                digital y la vida real.
+            </p>
+
+            <div class="hero-indicador">
+                <span></span>
+                Explora las tarjetas para conocer más
+            </div>
+
+            <div class="mini-info">
+
+                <div class="mini-box">
+                    <i class="fa-solid fa-clock"></i>
+                    <strong>Uso consciente</strong>
+                </div>
+
+                <div class="mini-box">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <strong>Equilibrio digital</strong>
+                </div>
+
+                <div class="mini-box">
+                    <i class="fa-solid fa-heart"></i>
+                    <strong>Bienestar personal</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-img">
+            <img src="../img/image.png" alt="Uso consciente de las redes sociales">
+        </div>
+
+    </section>
+
+
+    <section class="cards-section">
+
+        <div class="titulo-seccion">
+            Descubre Clio
+        </div>
+
+        <h2>
+            ENTIENDE, REFLEXIONA Y AYUDA
+        </h2>
+
+        <p>
+            Conoce los principales aspectos del bienestar digital,
+            identifica posibles riesgos y descubre formas de mantener
+            una relación más saludable con las redes sociales.
+        </p>
+
+
+        <div class="contenedor-cards-inicio">
+
+
+            <a href="riesgos.html" class="tarjeta-inicio">
+
+                <div class="interior-tarjeta-inicio">
+
+                    <div class="frente-inicio">
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        <h3>Riesgos</h3>
+
+                        <p>
+                            Conoce los efectos que puede tener el uso
+                            excesivo de las redes sociales en diferentes
+                            aspectos de la vida cotidiana.
+                        </p>
+
+                        <div class="etiqueta-inicio">
+                            Conoce los riesgos
+                        </div>
+
+                    </div>
+
+                    <div class="atras-inicio">
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        <h3>Riesgos</h3>
+
+                        <p>
+                            El uso excesivo puede relacionarse con
+                            dificultades para dormir, pérdida de
+                            concentración, estrés, aislamiento social,
+                            baja autoestima y dependencia digital.
+                            Conocer estos riesgos ayuda a tomar mejores
+                            decisiones.
+                        </p>
+
+                        <div class="card-explorar">
+                            Explorar sección
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <a href="consejos.html" class="tarjeta-inicio">
+
+                <div class="interior-tarjeta-inicio">
+
+                    <div class="frente-inicio">
+
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                        <h3>Consejos</h3>
+
+                        <p>
+                            Aprende pequeños hábitos que pueden ayudarte
+                            a controlar mejor tu tiempo y disfrutar de
+                            las redes de una manera más consciente.
+                        </p>
+
+                        <div class="etiqueta-inicio">
+                            Descubre consejos
+                        </div>
+
+                    </div>
+
+                    <div class="atras-inicio">
+
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                        <h3>Consejos</h3>
+
+                        <p>
+                            Establece límites de tiempo, controla las
+                            notificaciones, sigue contenido que te aporte
+                            y recuerda dedicar tiempo a tus actividades,
+                            amigos y familiares fuera de las pantallas.
+                        </p>
+
+                        <div class="card-explorar">
+                            Explorar sección
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <a href="recursos.html" class="tarjeta-inicio">
+
+                <div class="interior-tarjeta-inicio">
+
+                    <div class="frente-inicio">
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                        <h3>Recursos</h3>
+
+                        <p>
+                            Encuentra herramientas, información y
+                            contenidos que pueden ayudarte a comprender
+                            mejor el impacto de las redes sociales.
+                        </p>
+
+                        <div class="etiqueta-inicio">
+                            Explora recursos
+                        </div>
+
+                    </div>
+
+                    <div class="atras-inicio">
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                        <h3>Recursos</h3>
+
+                        <p>
+                            Explora artículos, herramientas, estudios
+                            y recomendaciones relacionadas con el
+                            bienestar digital y el uso responsable
+                            de las redes sociales.
+                        </p>
+
+                        <div class="card-explorar">
+                            Explorar sección
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <a href="bienestarmental.html" class="tarjeta-inicio">
+
+                <div class="interior-tarjeta-inicio">
+
+                    <div class="frente-inicio">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                        <h3>Bienestar</h3>
+
+                        <p>
+                            Aprende a cuidar tu bienestar personal y
+                            mantener relaciones saludables más allá
+                            de las pantallas.
+                        </p>
+
+                        <div class="etiqueta-inicio">
+                            Cuida tu bienestar
+                        </div>
+
+                    </div>
+
+                    <div class="atras-inicio">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                        <h3>Bienestar</h3>
+
+                        <p>
+                            Mantener un equilibrio entre la vida digital
+                            y la vida real puede ayudarte a cuidar tus
+                            relaciones, tu tiempo y tus actividades
+                            cotidianas.
+                        </p>
+
+                        <div class="card-explorar">
+                            Explorar sección
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section class="mensaje-final">
+
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+        <h2>
+            No se trata de dejar las redes.
+        </h2>
+
+        <p>
+            Se trata de aprender a utilizarlas de una manera que
+            aporte a tu vida, sin permitir que ocupen todo tu tiempo.
+            Pequeños cambios pueden ayudarte a encontrar un mejor
+            equilibrio digital.
+        </p>
+
+    </section>
+
+
+    <footer class="main-footer">
+
+        <ul class="footer-nav">
+
+            <li>
+                <a href="informacion.html">
+                    Sobre nosotros
+                </a>
+            </li>
+
+            <li>
+                <a href="informacion.html">
+                    Privacidad
+                </a>
+            </li>
+
+            <li>
+                <a href="informacion.html">
+                    Ayuda
+                </a>
+            </li>
+
+        </ul>
+
+        <p class="footer-copy">
+            &copy; 2026 Clio · Bienestar digital
+        </p>
+
+    </footer>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const enlacesProtegidos = document.querySelectorAll(
+            'a[href="riesgos.html"], ' +
+            'a[href="consejos.html"], ' +
+            'a[href="informacion.html"], ' +
+            'a[href="recursos.html"], ' +
+            'a[href="bienestarmental.html"]'
+        );
+
+        enlacesProtegidos.forEach(enlace => {
+
+            enlace.addEventListener("click", function(e) {
+
+                const usuario = localStorage.getItem("currentUser");
+
+                if (!usuario) {
+                    e.preventDefault();
+
+                    const continuar = confirm(
+                        "🔒 Necesitas iniciar sesión para acceder a esta sección.\n\n" +
+                        "¿Quieres iniciar sesión ahora?"
+                    );
+
+                    if (continuar) {
+                        window.location.href = "login.html";
+                    }
+                }
+
+            });
+
+        });
+
+    });
+</script>
+
+    <script src="../js/auth-ui.js"></script>
+
+</body>
+</html>

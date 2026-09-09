@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aislamiento social · Clio</title>
+    <link rel="stylesheet" href="../css/clio-styles.css" />
+    <link rel="stylesheet" href="../css/estilos-riesgos-sub.css" />
+    <style>
+        .imagen-riesgo {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 22px;
+            margin: 8px 0 30px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(124, 92, 255, 0.14), rgba(124, 92, 255, 0.04));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-align: center;
+            box-shadow: var(--sombra, 0 8px 25px rgba(0, 0, 0, 0.06));
+        }
+        .imagen-riesgo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .imagen-riesgo .placeholder-icono {
+            font-size: 34px;
+            opacity: 0.55;
+        }
+        .imagen-riesgo .placeholder-texto {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primario, #7C5CFF);
+            opacity: 0.8;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../img/dibujo logo CLIO NUEVO.svg" alt="Logo Clio" class="logo-img" />
+            <a href="inicio.html" class="brand">Clio</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="riesgos.html" class="active">Riesgos</a></li>
+            <li><a href="consejos.html">Consejos</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+        </ul>
+        <a href="login.html" class="btn-login">Iniciar sesión</a>
+    </nav>
+
+    <main class="main-container">
+        <div class="content-card">
+            <h1><span>Aislamiento social</span></h1>
+            <p>
+                Aunque las redes sociales están diseñadas para "conectar" personas, usarlas en
+                exceso puede tener el efecto contrario: reemplazar las interacciones reales
+                por interacciones digitales superficiales. Pasar horas viendo la vida de otros
+                en una pantalla es distinto a compartir tiempo real con las personas que
+                tienes cerca.
+            </p>
+
+            <div class="imagen-riesgo">
+                     <img src="../img/aislamiento.png" alt="Aislamiento social" />
+            </div>
+
+            <div class="tip-destacado">
+                <div class="tip-icono">
+                    <img src="../img/icon-tip.png" alt="Tip del día" />
+                </div>
+                <div>
+                    <h3>Tip del día</h3>
+                    <p><strong>Convierte una interacción digital en una real cada semana.</strong> En vez de solo comentar o mandar mensajes a un amigo, propón verse en persona o hacer una llamada de voz en lugar de escribir por chat.</p>
+                </div>
+            </div>
+
+            <div class="seccion-titulo">
+                <div class="icono-titulo">
+                    <img src="../img/icon-alerta.png" alt="Señales de alerta" />
+                </div>
+                <span>Señales de alerta</span>
+            </div>
+
+            <div class="riesgos-grid">
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/pantalla.png" alt="Preferir la pantalla" /></div>
+                            <h3>Preferir la pantalla a la compañía</h3>
+                            <p class="descripcion">Cuando estás con alguien, sientes más ganas de revisar el celular que de participar en la conversación.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Cuando estés compartiendo con alguien, guarda el celular fuera de la mesa o en modo silencio. Esa pequeña acción cambia mucho la calidad del tiempo juntos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/salidas.png" alt="Reducir salidas" /></div>
+                            <h3>Menos ganas de salir</h3>
+                            <p class="descripcion">Prefieres quedarte viendo contenido en el celular en vez de salir a actividades que antes disfrutabas.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Comprométete con planes pequeños y concretos, como una hora de estudio juntos o caminar con alguien, en vez de dejarlo como "algún día".</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/digitales.png" alt="Relaciones solo digitales" /></div>
+                            <h3>Relaciones solo digitales</h3>
+                            <p class="descripcion">Notas que la mayoría de tu contacto con amigos o familiares pasa solo por mensajes o likes, sin encuentros reales.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Elige a una o dos personas cercanas y propón verlas en persona con regularidad, aunque sea algo sencillo como estudiar juntos o comer algo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/soledad.png" alt="Soledad a pesar de estar conectado" /></div>
+                            <h3>Soledad a pesar de estar "conectado"</h3>
+                            <p class="descripcion">Tienes muchos contactos, pero sientes que no hay nadie con quien realmente puedas hablar.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>La cantidad de contactos no equivale a calidad de relación. Enfócate en profundizar unas pocas amistades reales en vez de acumular conexiones superficiales.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="riesgos.html" class="back-link">← Volver a Riesgos</a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <ul class="footer-nav">
+            <li><a href="informacion.html">Sobre nosotros</a></li>
+            <li><a href="informacion.html">Privacidad</a></li>
+            <li><a href="informacion.html">Ayuda</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2026 Clio · Bienestar digital</p>
+    </footer>
+    <script src="../js/auth-ui.js"></script>
+</body>
+</html>

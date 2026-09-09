@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guía: Límites de uso · Clio</title>
+    <link rel="stylesheet" href="../css/clio-styles.css" />
+    <link rel="stylesheet" href="../css/subpages-style.css" />
+    <style>
+        /* Estilos específicos para esta guía */
+        .limites-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 25px 0 10px;
+        }
+
+        .limite-card {
+            background: var(--fondo-tarjeta);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            border: 1px solid rgba(124, 92, 255, 0.12);
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .limite-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primario);
+            transition: 0.4s;
+        }
+
+        .limite-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primario);
+            box-shadow: 0 15px 40px rgba(124, 92, 255, 0.20);
+        }
+
+        .limite-card:hover::before {
+            width: 6px;
+        }
+
+        .limite-card .header-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 4px;
+        }
+
+        .limite-card .header-card .icono {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            background: rgba(124, 92, 255, 0.10);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .limite-card:hover .header-card .icono {
+            background: var(--primario);
+        }
+
+        .limite-card .header-card .icono img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .limite-card:hover .header-card .icono img {
+            opacity: 1;
+        }
+
+        .limite-card .header-card h3 {
+            font-size: 18px;
+            color: var(--texto-principal);
+            margin: 0;
+        }
+
+        .limite-card .etiqueta {
+            display: inline-block;
+            background: rgba(124, 92, 255, 0.10);
+            color: var(--primario);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            align-self: flex-start;
+        }
+
+        .limite-card p {
+            color: var(--texto-secundario);
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 4px 0 0;
+        }
+
+        .limite-card .enlace-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primario);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 8px;
+            transition: 0.3s;
+            align-self: flex-start;
+        }
+
+        .limite-card .enlace-card:hover {
+            color: var(--primario-claro);
+            gap: 14px;
+        }
+
+        .limite-card .enlace-card .flecha {
+            transition: 0.3s;
+        }
+
+        .limite-card .enlace-card:hover .flecha {
+            transform: translateX(4px);
+        }
+
+        /* Ajustes para la sección de pasos (usando .tecnica de subpages-style) */
+        .tecnica {
+            background: var(--fondo-tarjeta);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primario);
+            transition: 0.3s;
+        }
+
+        .tecnica:hover {
+            transform: translateX(4px);
+        }
+
+        .tecnica h3 {
+            color: var(--primario);
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+
+        .tecnica p {
+            color: var(--texto-secundario);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .tecnica ul {
+            padding-left: 20px;
+            margin: 10px 0 5px;
+        }
+
+        .tecnica ul li {
+            color: var(--texto-secundario);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+
+        .tecnica ul li strong {
+            color: var(--texto-principal);
+        }
+
+        /* Comparativa de herramientas */
+        .comparativa-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 18px;
+            margin: 20px 0 30px;
+        }
+
+        .comparativa-item {
+            background: var(--fondo-tarjeta);
+            border-radius: var(--radius);
+            padding: 20px 18px;
+            border: 1px solid rgba(124, 92, 255, 0.10);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .comparativa-item:hover {
+            border-color: var(--primario);
+            transform: translateY(-3px);
+        }
+
+        .comparativa-item h4 {
+            color: var(--texto-principal);
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .comparativa-item p {
+            color: var(--texto-secundario);
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .comparativa-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .limites-grid {
+                grid-template-columns: 1fr;
+            }
+            .comparativa-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .tecnica {
+                padding: 18px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../img/recursos/dibujo logo CLIO NUEVO.svg" alt="Logo Clio" class="logo-img" />
+            <a href="inicio.html" class="brand">Clio</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="riesgos.html">Riesgos</a></li>
+            <li><a href="consejos.html">Consejos</a></li>
+            <li><a href="recursos.html" class="active">Recursos</a></li>
+        </ul>
+        <a href="login.html" class="btn-login">Iniciar sesión</a>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="main-container">
+        <div class="content-card">
+
+            <!-- Título -->
+            <h1><span>Guía: Límites de uso de apps</span></h1>
+
+            <!-- Introducción -->
+            <div class="intro-guia">
+                <p>
+                    Establecer límites de uso para las aplicaciones es una de las estrategias más efectivas para recuperar el control sobre tu tiempo digital. Estas herramientas te ayudan a ser consciente de cuánto tiempo pasas en cada app y te alertan cuando superas tus propios límites, fomentando un uso más equilibrado y saludable.
+                </p>
+            </div>
+
+            <!-- Beneficios -->
+            <h2 style="font-size:24px; margin-bottom:15px; color:var(--texto-principal);">Beneficios de establecer límites</h2>
+            <div class="beneficios-grid">
+                <div class="beneficio-item">
+                    <div class="icono-beneficio">
+                        <img src="../img/recursos/beneficio-autocontrol.png" alt="Mayor autocontrol" />
+                    </div>
+                    <h4>Mayor autocontrol</h4>
+                    <p>Te ayuda a ser consciente de tus hábitos y a tomar decisiones más intencionales.</p>
+                </div>
+                <div class="beneficio-item">
+                    <div class="icono-beneficio">
+                        <img src="../img/recursos/beneficio-tiempo-libre.png" alt="Más tiempo libre" />
+                    </div>
+                    <h4>Más tiempo libre</h4>
+                    <p>Liberas horas que puedes dedicar a actividades más significativas y enriquecedoras.</p>
+                </div>
+                <div class="beneficio-item">
+                    <div class="icono-beneficio">
+                        <img src="../img/recursos/beneficio-fatiga.png" alt="Menos fatiga mental" />
+                    </div>
+                    <h4>Menos fatiga mental</h4>
+                    <p>Reduces la sobrecarga de información y el agotamiento digital.</p>
+                </div>
+                <div class="beneficio-item">
+                    <div class="icono-beneficio">
+                        <img src="../img/recursos/beneficio-equilibrio.png" alt="Mejor equilibrio" />
+                    </div>
+                    <h4>Mejor equilibrio</h4>
+                    <p>Logras un balance más saludable entre la vida digital y la vida real.</p>
+                </div>
+            </div>
+
+            <!-- Comparativa de herramientas -->
+            <h2 style="font-size:24px; margin: 30px 0 15px; color:var(--texto-principal);">Herramientas para establecer límites</h2>
+            <div class="comparativa-grid">
+                <div class="comparativa-item">
+                    <h4>StayFree</h4>
+                    <p>Disponible para Android e iOS. Permite establecer límites por app, recibir recordatorios y ver estadísticas detalladas.</p>
+                </div>
+                <div class="comparativa-item">
+                    <h4>Bienestar Digital</h4>
+                    <p>Integrado en Android. Muestra el tiempo de uso, desbloqueos y notificaciones. Permite establecer temporizadores de apps y modos de enfoque.</p>
+                </div>
+                <div class="comparativa-item">
+                    <h4>Screen Time</h4>
+                    <p>Integrado en iOS. Ofrece límites de apps, tiempo de inactividad, y reportes semanales. Sincroniza entre dispositivos Apple.</p>
+                </div>
+            </div>
+
+            <!-- Pasos para establecer límites -->
+            <h2 style="font-size:24px; margin: 30px 0 15px; color:var(--texto-principal);">Pasos para establecer límites efectivos</h2>
+
+            <div class="tecnica">
+                <h3>Paso 1: Analiza tu uso actual</h3>
+                <p>Durante una semana, revisa tus estadísticas de uso. Identifica qué apps consumen más tiempo y en qué momentos del día tiendes a distraerte más. Esto te dará una base realista para establecer límites.</p>
+            </div>
+
+            <div class="tecnica">
+                <h3>Paso 2: Define límites realistas</h3>
+                <p>Empieza con límites moderados. Por ejemplo, si usas Instagram 2 horas al día, pon un límite de 1 hora. Si usas YouTube 3 horas, reduce a 1.5 horas. Ajusta gradualmente a medida que te sientas más cómodo.</p>
+            </div>
+
+            <div class="tecnica">
+                <h3>Paso 3: Configura los límites en tu dispositivo</h3>
+                <p>Usa la herramienta nativa de tu sistema (Bienestar Digital, Screen Time) o descarga StayFree. Establece los límites por app y activa las notificaciones de alerta. Algunas apps permiten bloquear el acceso cuando se alcanza el límite.</p>
+            </div>
+
+            <div class="tecnica">
+                <h3>Paso 4: Crea espacios libres de tecnología</h3>
+                <p>Define momentos del día sin pantallas (ej. durante las comidas, 1 hora antes de dormir). Configura el "Tiempo de inactividad" en tu dispositivo para bloquear automáticamente las apps en esas horas.</p>
+            </div>
+
+            <div class="tecnica">
+                <h3>Paso 5: Revisa y ajusta semanalmente</h3>
+                <p>Cada semana, revisa tus estadísticas y evalúa si los límites son adecuados. Si los superas con frecuencia, puede que sean demasiado estrictos; ajústalos gradualmente hasta encontrar el equilibrio perfecto.</p>
+            </div>
+
+            <!-- Consejo final -->
+            <div class="consejo-final">
+                <p>
+                    <strong>Recuerda:</strong> Los límites de uso no son castigos, sino herramientas para ayudarte a vivir con más intención. La meta no es eliminar el uso de la tecnología, sino usarla de manera que enriquezca tu vida, no que la consuma. Sé amable contigo mismo y celebra los pequeños progresos.
+                </p>
+            </div>
+
+            <!-- Volver -->
+            <a href="controldetiempo.html" class="back-link" style="margin-top: 30px;">← Volver a Control de tiempo</a>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <ul class="footer-nav">
+            <li><a href="informacion.html">Sobre nosotros</a></li>
+            <li><a href="informacion.html">Privacidad</a></li>
+            <li><a href="informacion.html">Ayuda</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2026 Clio · Bienestar digital</p>
+    </footer>
+
+    <script src="../js/auth-ui.js"></script>
+</body>
+</html>

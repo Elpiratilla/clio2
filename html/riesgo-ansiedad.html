@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ansiedad y estrés · Clio</title>
+    <link rel="stylesheet" href="../css/clio-styles.css" />
+    <link rel="stylesheet" href="../css/estilos-riesgos-sub.css" />
+    <style>
+        .imagen-riesgo {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 22px;
+            margin: 8px 0 30px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(124, 92, 255, 0.14), rgba(124, 92, 255, 0.04));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-align: center;
+            box-shadow: var(--sombra, 0 8px 25px rgba(0, 0, 0, 0.06));
+        }
+        .imagen-riesgo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .imagen-riesgo .placeholder-icono {
+            font-size: 34px;
+            opacity: 0.55;
+        }
+        .imagen-riesgo .placeholder-texto {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primario, #7C5CFF);
+            opacity: 0.8;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../img/dibujo logo CLIO NUEVO.svg" alt="Logo Clio" class="logo-img" />
+            <a href="inicio.html" class="brand">Clio</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="riesgos.html" class="active">Riesgos</a></li>
+            <li><a href="consejos.html">Consejos</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+        </ul>
+        <a href="login.html" class="btn-login">Iniciar sesión</a>
+    </nav>
+
+    <main class="main-container">
+        <div class="content-card">
+            <h1><span>Ansiedad y estrés</span></h1>
+            <p>
+                El flujo constante de notificaciones, noticias y contenido nuevo mantiene al
+                cerebro en un estado de alerta permanente. Sumado a la necesidad de estar
+                siempre disponible y actualizado, esto puede generar niveles de estrés y
+                ansiedad que muchas veces ni siquiera relacionamos con el uso del celular.
+            </p>
+
+            <div class="imagen-riesgo">
+                <img src="../img/estres.png" alt="Ansiedad y estrés" /> 
+            </div>
+
+            <div class="tip-destacado">
+                <div class="tip-icono">
+                    <img src="../img/icon-tip.png" alt="Tip del día" />
+                </div>
+                <div>
+                    <h3>Tip del día</h3>
+                    <p><strong>Prueba la técnica de respiración 4-7-8.</strong> Inhala por la nariz contando hasta 4, sostén el aire contando hasta 7, y exhala lentamente por la boca contando hasta 8. Repite el ciclo 4 veces cuando sientas que la ansiedad empieza a subir.</p>
+                </div>
+            </div>
+
+            <div class="seccion-titulo">
+                <div class="icono-titulo">
+                    <img src="../img/icon-alerta.png" alt="Señales de alerta" />
+                </div>
+                <span>Señales de alerta</span>
+            </div>
+
+            <div class="riesgos-grid">
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/revision.png" alt="Revisión compulsiva" /></div>
+                            <h3>Revisión compulsiva</h3>
+                            <p class="descripcion">Sientes la necesidad de revisar el celular apenas te llega una notificación.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Desactiva las notificaciones que no sean urgentes. Deja el celular en otra habitación durante bloques de tiempo específicos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/sobrecarga.png" alt="Sobrecarga informativa" /></div>
+                            <h3>Sobrecarga informativa</h3>
+                            <p class="descripcion">Te sientes agotado después de pasar tiempo desplazándote sin parar por contenido.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Establece un límite de tiempo diario en redes usando el control de tiempo de pantalla de tu celular. Reduce poco a poco.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/tension.png" alt="Tensión física" /></div>
+                            <h3>Tensión física</h3>
+                            <p class="descripcion">Notas hombros tensos, mandíbula apretada o dolor de cabeza después de mucho tiempo con el celular.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Cada hora, haz una pausa de un minuto para estirar el cuello y los hombros. El cuerpo también necesita descansos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/fomo.png" alt="Miedo a perderse algo" /></div>
+                            <h3>Miedo a perderte algo (FOMO)</h3>
+                            <p class="descripcion">Te preocupa perderte una conversación o actualización, lo que te empuja a seguir revisando.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Recuerda que es imposible ver todo lo que pasa en internet en tiempo real. No pasa nada si te enteras de algo unas horas después.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="riesgos.html" class="back-link">← Volver a Riesgos</a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <ul class="footer-nav">
+            <li><a href="informacion.html">Sobre nosotros</a></li>
+            <li><a href="informacion.html">Privacidad</a></li>
+            <li><a href="informacion.html">Ayuda</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2026 Clio · Bienestar digital</p>
+    </footer>
+    <script src="../js/auth-ui.js"></script>
+</body>
+</html>

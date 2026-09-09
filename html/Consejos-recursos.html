@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consejos para padres · Clio</title>
+    <link rel="stylesheet" href="../css/clio-styles.css" />
+    <link rel="stylesheet" href="../css/subpages-style.css" />
+    <style>
+        .consejos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 25px 0 10px;
+        }
+
+        .consejo-card {
+            background: var(--fondo-tarjeta);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            border: 1px solid rgba(124, 92, 255, 0.12);
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .consejo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primario);
+            transition: 0.4s;
+        }
+
+        .consejo-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primario);
+            box-shadow: 0 15px 40px rgba(124, 92, 255, 0.20);
+        }
+
+        .consejo-card:hover::before {
+            width: 6px;
+        }
+
+        .consejo-card .header-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 4px;
+        }
+
+        .consejo-card .header-card .icono {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            background: rgba(124, 92, 255, 0.10);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .consejo-card:hover .header-card .icono {
+            background: var(--primario);
+        }
+
+        .consejo-card .header-card .icono img {
+            zoom: 2.5;
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .consejo-card:hover .header-card .icono img {
+            opacity: 1;
+        }
+
+        .consejo-card .header-card h3 {
+            font-size: 18px;
+            color: var(--texto-principal);
+            margin: 0;
+        }
+
+        .consejo-card .etiqueta {
+            display: inline-block;
+            background: rgba(124, 92, 255, 0.10);
+            color: var(--primario);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            align-self: flex-start;
+        }
+
+        .consejo-card p {
+            color: var(--texto-secundario);
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 4px 0 0;
+        }
+
+        .consejo-card ul {
+            padding-left: 18px;
+            margin: 6px 0 0;
+        }
+
+        .consejo-card ul li {
+            color: var(--texto-secundario);
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 4px;
+        }
+
+        .consejo-card ul li strong {
+            color: var(--texto-principal);
+        }
+
+        .consejo-card .enlace-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primario);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 8px;
+            transition: 0.3s;
+            align-self: flex-start;
+        }
+
+        .consejo-card .enlace-card:hover {
+            color: var(--primario-claro);
+            gap: 14px;
+        }
+
+        .consejo-card .enlace-card .flecha {
+            transition: 0.3s;
+        }
+
+        .consejo-card .enlace-card:hover .flecha {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 700px) {
+            .consejos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../img/recursos/dibujo logo CLIO NUEVO.svg" alt="Logo Clio" class="logo-img" />
+            <a href="inicio.html" class="brand">Clio</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="riesgos.html">Riesgos</a></li>
+            <li><a href="consejos.html">Consejos</a></li>
+            <li><a href="recursos.html" class="active">Recursos</a></li>
+        </ul>
+        <a href="login.html" class="btn-login">Iniciar sesión</a>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="main-container">
+        <div class="content-card">
+            <h1><span>Consejos para padres en El Salvador</span></h1>
+
+            <div class="intro-guia">
+                <p>
+                    Acompañar a los niños y adolescentes en el mundo digital es uno de los mayores desafíos de la crianza actual. Estos recursos locales ofrecen herramientas prácticas para proteger y guiar a tus hijos.
+                </p>
+            </div>
+
+            <!-- Grid de consejos -->
+            <div class="consejos-grid">
+
+                <!-- Consejo 1: UNICEF -->
+                <div class="consejo-card">
+                    <div class="header-card">
+                        <div class="icono">
+                            <img src="../img/recursos/icon-unicef.png" alt="UNICEF" />
+                        </div>
+                        <h3>UNICEF El Salvador</h3>
+                    </div>
+                    <span class="etiqueta">Guía de crianza digital</span>
+                    <p>Recursos y recomendaciones para fomentar el uso responsable de la tecnología en el hogar. Incluye pautas sobre límites de tiempo, seguridad en línea y comunicación familiar.</p>
+                    <a href="https://www.unicef.org/elsalvador/" target="_blank" class="enlace-card">
+                        Visitar UNICEF <span class="flecha">→</span>
+                    </a>
+                </div>
+
+                <!-- Consejo 2: MINED -->
+                <div class="consejo-card">
+                    <div class="header-card">
+                        <div class="icono">
+                            <img src="../img/recursos/icon-mined.png" alt="MINED" />
+                        </div>
+                        <h3>Ministerio de Educación</h3>
+                    </div>
+                    <span class="etiqueta">Consejos para padres</span>
+                    <p>Guías sobre el uso seguro de internet y redes sociales en el entorno escolar. Consejos clave:</p>
+                    <ul>
+                        <li><strong>Supervisión activa:</strong> Acompaña a tus hijos en el uso de dispositivos.</li>
+                        <li><strong>Diálogo constante:</strong> Habla sobre los riesgos y beneficios de internet.</li>
+                        <li><strong>Establece horarios:</strong> Define momentos sin pantallas.</li>
+                    </ul>
+                    <a href="https://www.mined.gob.sv/" target="_blank" class="enlace-card">
+                        Visitar MINED <span class="flecha">→</span>
+                    </a>
+                </div>
+
+                <!-- Consejo 3: CONNA -->
+                <div class="consejo-card">
+                    <div class="header-card">
+                        <div class="icono">
+                            <img src="../img/recursos/icon-conna.png" alt="CONNA" />
+                        </div>
+                        <h3>Consejo Nacional CONNA</h3>
+                    </div>
+                    <span class="etiqueta">Protección digital</span>
+                    <p>Promueve la protección de los derechos de la niñez y adolescencia en entornos digitales. Ofrecen orientación sobre prevención de violencia digital, grooming y ciberacoso.</p>
+                    <a href="https://www.conna.gob.sv/" target="_blank" class="enlace-card">
+                        Visitar CONNA <span class="flecha">→</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Consejo final -->
+            <div class="consejo-final">
+                <p>
+                    <strong>Recuerda:</strong> Guiar en lo digital es también una forma de cuidar. La confianza y el diálogo son las herramientas más poderosas.
+                </p>
+            </div>
+
+            <a href="recursos.html" class="back-link" style="margin-top: 30px;">← Volver a Recursos</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <ul class="footer-nav">
+            <li><a href="informacion.html">Sobre nosotros</a></li>
+            <li><a href="informacion.html">Privacidad</a></li>
+            <li><a href="informacion.html">Ayuda</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2026 Clio · Bienestar digital</p>
+    </footer>
+    <script src="../js/auth-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adicción digital · Clio</title>
+    <link rel="stylesheet" href="../css/clio-styles.css" />
+    <link rel="stylesheet" href="../css/estilos-riesgos-sub.css" />
+    <style>
+     .imagen-riesgo {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 22px;
+            margin: 8px 0 30px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(124, 92, 255, 0.14), rgba(124, 92, 255, 0.04));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-align: center;
+            box-shadow: var(--sombra, 0 8px 25px rgba(0, 0, 0, 0.06));
+        }
+        .imagen-riesgo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .imagen-riesgo .placeholder-icono {
+            font-size: 34px;
+            opacity: 0.55;
+        }
+        .imagen-riesgo .placeholder-texto {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primario, #7C5CFF);
+            opacity: 0.8;
+            padding: 0 20px;
+        }
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../img/dibujo logo CLIO NUEVO.svg" alt="Logo Clio" class="logo-img" />
+            <a href="inicio.html" class="brand">Clio</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="riesgos.html" class="active">Riesgos</a></li>
+            <li><a href="consejos.html">Consejos</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+        </ul>
+        <a href="login.html" class="btn-login">Iniciar sesión</a>
+    </nav>
+
+    <main class="main-container">
+        <div class="content-card">
+            <h1><span>Adicción digital</span></h1>
+            <p>
+                Las redes sociales están diseñadas para mantenerte el mayor tiempo posible
+                dentro de la app: scroll infinito, notificaciones constantes y recompensas
+                impredecibles activan los mismos mecanismos cerebrales que otras conductas
+                adictivas. Esto no significa que uses mal fuerza de voluntad, sino que la app
+                está hecha para ser difícil de soltar.
+            </p>
+
+            <div class="imagen-riesgo">
+                <img src="../img/adiccion.png" alt="Adicción digital" />
+            </div>
+
+            <div class="tip-destacado">
+                <div class="tip-icono">
+                    <img src="../img/icon-tip.png" alt="Tip del día" />
+                </div>
+                <div>
+                    <h3>Tip del día</h3>
+                    <p><strong>Usa el control de tiempo de pantalla de tu celular.</strong> La mayoría de teléfonos ya trae una función que muestra cuánto tiempo pasas en cada app y te permite poner límites diarios. Revisa ese dato al menos una vez: muchas veces sorprende ver el número real.</p>
+                </div>
+            </div>
+
+            <div class="seccion-titulo">
+                <div class="icono-titulo">
+                    <img src="../img/icon-alerta.png" alt="Señales de alerta" />
+                </div>
+                <span>Señales de alerta</span>
+            </div>
+
+            <div class="riesgos-grid">
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/tiempo-app.png" alt="Perder la noción del tiempo" /></div>
+                            <h3>Perder la noción del tiempo</h3>
+                            <p class="descripcion">Entras "solo un momento" a la app y sin darte cuenta pasó mucho más tiempo del que planeabas.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Configura un límite de tiempo diario por app en la configuración de tu celular. Cuando se cumpla, respeta el aviso en vez de ignorarlo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/intentos.png" alt="Intentos fallidos" /></div>
+                            <h3>Intentos fallidos de reducir el uso</h3>
+                            <p class="descripcion">Has intentado usar menos el celular, pero terminas volviendo a los mismos hábitos.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>En vez de intentar dejarlo de golpe, reduce el uso poco a poco: 15 minutos menos cada semana es más sostenible que cortar todo de un día para otro.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/inquietud.png" alt="Inquietud sin el celular" /></div>
+                            <h3>Inquietud sin el celular</h3>
+                            <p class="descripcion">Sientes ansiedad o la necesidad urgente de revisar el celular cuando pasas un rato sin él.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Practica dejar el celular en otro cuarto durante actividades cortas, como comer o hacer ejercicio, para acostumbrarte poco a poco a estar sin él.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icono"><img src="../img/descuidar.png" alt="Descuidar otras actividades" /></div>
+                            <h3>Descuidar otras actividades</h3>
+                            <p class="descripcion">Dejas de lado tareas, ejercicio o tiempo con otras personas porque prefieres seguir en la app.</p>
+                            <span class="etiqueta">Dale la vuelta</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icono-back"><img src="../img/icon-accion.png" alt="Acción" /></div>
+                            <h4>Qué hacer</h4>
+                            <p>Programa tus actividades importantes primero en el día, antes de abrir redes sociales, para que no terminen ocupando el tiempo que tenías planeado para otras cosas.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="riesgos.html" class="back-link">← Volver a Riesgos</a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <ul class="footer-nav">
+            <li><a href="informacion.html">Sobre nosotros</a></li>
+            <li><a href="informacion.html">Privacidad</a></li>
+            <li><a href="informacion.html">Ayuda</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2026 Clio · Bienestar digital</p>
+    </footer>
+    <script src="../js/auth-ui.js"></script>
+</body>
+</html>

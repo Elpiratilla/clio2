@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clio | Riesgos del uso excesivo</title>
+    <link rel="stylesheet" href="../css/clio-styles.css">
+    <style>
+        main {
+            display: grid;
+            grid-template-columns: 40% 58%;
+            gap: 40px;
+            margin: 40px auto;
+        }
+
+        .informacion {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .subtitulo {
+            color: var(--primario);
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+
+        .informacion h2 {
+            font-size: 64px;
+            font-family: 'Segoe UI', 'Fredoka', system-ui, sans-serif;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .informacion h2 span {
+            color: var(--primario);
+        }
+
+        .informacion p {
+            color: var(--texto-secundario);
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .imagen {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 25px;
+            box-shadow: var(--sombra);
+        }
+
+        .imagen img {
+            border-radius: 25px;
+            transition: transform 0.4s;
+            width: 100%;
+            display: block;
+        }
+
+        .imagen img:hover {
+            transform: scale(1.03);
+        }
+
+        .mensaje {
+            margin-top: 30px;
+            background: var(--fondo-tarjeta);
+            border-radius: var(--radius);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: var(--sombra);
+        }
+
+        .icono {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            background: var(--primario);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icono img {
+            zoom: 2;
+            width: 38px;
+            height: 38px;
+            object-fit: contain;
+        }
+
+        .texto h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--texto-principal);
+        }
+
+        .texto p {
+            margin: 0;
+            color: var(--texto-secundario);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--fondo-tarjeta);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--sombra);
+            transition: transform 1s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(124, 92, 255, 0.30);
+        }
+
+        .card .icon {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .card .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            font-size: 28px;
+            font-family: 'Segoe UI', 'Fredoka', system-ui, sans-serif;
+            margin-bottom: 15px;
+            color: var(--texto-principal);
+        }
+
+        .card p {
+            color: var(--texto-secundario);
+            line-height: 1.7;
+            font-size: 15px;
+            flex-grow: 1;
+        }
+
+        .card .ver-mas {
+            display: inline-block;
+            align-self: flex-start;
+            margin-top: 20px;
+            background: var(--primario);
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px 22px;
+            border-radius: 30px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .card .ver-mas:hover {
+            background: var(--primario-claro, #6a4bff);
+            transform: translateX(3px);
+        }
+
+        .advertencia {
+            background: rgba(124, 92, 255, 0.1);
+            border-left: 4px solid var(--primario);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: var(--sombra);
+            grid-column: 1 / -1;
+        }
+
+        .advertencia p {
+            margin: 0;
+            color: var(--texto-secundario);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .advertencia p strong {
+            color: var(--primario-claro);
+        }
+
+        /* Colores de fondo del circulo del icono */
+        .card:nth-child(1) .icon { background: #A94156; }
+        .card:nth-child(2) .icon { background: #7156FF; }
+        .card:nth-child(3) .icon { background: #4654C7; }
+        .card:nth-child(4) .icon { background: #F59B2A; }
+        .card:nth-child(5) .icon { background: #329A91; }
+        .card:nth-child(6) .icon { background: #C34C63; }
+
+        @media (max-width: 1100px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+            .tarjetas {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tarjetas {
+                grid-template-columns: 1fr;
+            }
+            .informacion h2 {
+                font-size: 45px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .informacion h2 {
+                font-size: 36px;
+            }
+            .card {
+                padding: 22px;
+            }
+            .card h3 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../img/dibujo logo CLIO NUEVO.svg" alt="Logo Clio" class="logo-img" />
+            <a href="inicio.html" class="brand">Clio</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="riesgos.html" class="active">Riesgos</a></li>
+            <li><a href="consejos.html">Consejos</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+        </ul>
+        <a href="login.html" class="btn-login">Iniciar sesión</a>
+    </nav>
+
+    <main class="main-container">
+        <section class="informacion">
+            <span class="subtitulo">Conoce los riesgos</span>
+            <h2>Riesgos del uso <span>excesivo</span> de redes</h2>
+            <p>
+                El uso excesivo de las redes sociales puede afectar tu salud
+                mental, emocional y tu rendimiento diario. Informarte es el
+                primer paso para utilizarlas de manera responsable.
+            </p>
+            <div class="imagen">
+                <img src="../img/image.png" alt="Persona utilizando un teléfono">
+            </div>
+            <div class="mensaje">
+                <div class="icono">
+                    <img src="../img/image copy.png" alt="Información">
+                </div>
+                <div class="texto">
+                    <h3>Infórmate es el primer paso para tomar el control.</h3>
+                    <p>
+                        Reconocer los riesgos te ayuda a tomar mejores
+                        decisiones en el uso diario de las redes sociales.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tarjetas">
+            <div class="advertencia">
+                <p><strong>Aviso importante:</strong> El contenido de este sitio web es puramente educativo e informativo y no sustituye la consulta, el diagnóstico o el tratamiento médico profesional.</p>
+            </div>
+
+            <article class="card">
+                <div class="icon"><img src="../img/image copy 2.png" alt="Baja autoestima"></div>
+                <h3>Baja autoestima</h3>
+                <p>Compararte constantemente con otras personas puede afectar la percepción que tienes de ti mismo.</p>
+                <a href="riesgo-autoestima.html" class="ver-mas">Ver más →</a>
+            </article>
+            <article class="card">
+                <div class="icon"><img src="../img/image copy 3.png" alt="Ansiedad"></div>
+                <h3>Ansiedad y estrés</h3>
+                <p>El exceso de información y la necesidad de estar conectado pueden aumentar el estrés y la ansiedad.</p>
+                <a href="riesgo-ansiedad.html" class="ver-mas">Ver más →</a>
+            </article>
+            <article class="card">
+                <div class="icon"><img src="../img/image copy 4.png" alt="Sueño"></div>
+                <h3>Problemas de sueño</h3>
+                <p>Utilizar dispositivos antes de dormir puede disminuir la calidad del descanso.</p>
+                <a href="riesgo-sueno.html" class="ver-mas">Ver más →</a>
+            </article>
+            <article class="card">
+                <div class="icon"><img src="../img/image copy 5.png" alt="Enfoque"></div>
+                <h3>Pérdida de enfoque</h3>
+                <p>Las interrupciones constantes reducen la concentración y afectan el rendimiento académico.</p>
+                <a href="riesgo-enfoque.html" class="ver-mas">Ver más →</a>
+            </article>
+            <article class="card">
+                <div class="icon"><img src="../img/image copy 6.png" alt="Aislamiento"></div>
+                <h3>Aislamiento social</h3>
+                <p>Pasar demasiado tiempo en redes puede disminuir la interacción con familiares y amigos.</p>
+                <a href="riesgo-aislamiento.html" class="ver-mas">Ver más →</a>
+            </article>
+            <article class="card">
+                <div class="icon"><img src="../img/image copy 7.png" alt="Adicción"></div>
+                <h3>Adicción digital</h3>
+                <p>El uso compulsivo de las redes sociales puede convertirse en un hábito difícil de controlar.</p>
+                <a href="riesgo-adiccion.html" class="ver-mas">Ver más →</a>
+            </article>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <ul class="footer-nav">
+            <li><a href="informacion.html">Sobre nosotros</a></li>
+            <li><a href="informacion.html">Privacidad</a></li>
+            <li><a href="informacion.html">Ayuda</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2026 Clio · Bienestar digital</p>
+    </footer>
+
+    <script src="../js/riesgos.js"></script>
+    <script src="../js/auth-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clio · Mi cuenta</title>
+    <link rel="stylesheet" href="../css/clio-styles.css">
+    <style>
+        .cuenta-header {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            margin-bottom: 30px;
+        }
+
+        .cuenta-avatar {
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            background: var(--primario);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .cuenta-header h1 {
+            font-size: 30px;
+            margin-bottom: 4px;
+        }
+
+        .cuenta-header p {
+            color: var(--texto-secundario);
+            font-size: 15px;
+            margin: 0;
+        }
+
+        .cuenta-datos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin: 25px 0 35px;
+        }
+
+        .cuenta-dato {
+            background: rgba(124, 92, 255, 0.07);
+            border: 1px solid rgba(124, 92, 255, 0.15);
+            border-radius: 16px;
+            padding: 18px 22px;
+        }
+
+        .cuenta-dato span {
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primario);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .cuenta-dato strong {
+            font-size: 16px;
+            color: var(--texto-principal);
+            word-break: break-all;
+        }
+
+        .cuenta-acciones {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-cerrar-sesion {
+            display: inline-block;
+            background: transparent;
+            color: #ff6b6b;
+            border: 1px solid #ff6b6b;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-cerrar-sesion:hover {
+            background: #ff6b6b;
+            color: #fff;
+        }
+
+        @media (max-width: 600px) {
+            .cuenta-datos {
+                grid-template-columns: 1fr;
+            }
+            .cuenta-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="../img/dibujo logo CLIO NUEVO.svg" alt="Logo Clio" class="logo-img">
+            <a href="inicio.html" class="brand">Clio</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="riesgos.html">Riesgos</a></li>
+            <li><a href="consejos.html">Consejos</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+        </ul>
+        <a href="login.html" class="btn-login">Iniciar sesión</a>
+    </nav>
+
+    <main class="main-container">
+        <div class="content-card">
+
+            <div class="cuenta-header">
+                <div class="cuenta-avatar" id="cuentaAvatar">U</div>
+                <div>
+                    <h1 id="cuentaNombre">Mi cuenta</h1>
+                    <p>Este es el estado actual de tu cuenta en Clio.</p>
+                </div>
+            </div>
+
+            <div class="cuenta-datos">
+                <div class="cuenta-dato">
+                    <span>Nombre completo</span>
+                    <strong id="cuentaNombreCompleto">—</strong>
+                </div>
+                <div class="cuenta-dato">
+                    <span>Correo electrónico</span>
+                    <strong id="cuentaCorreo">—</strong>
+                </div>
+            </div>
+
+            <div class="cuenta-acciones">
+                <a href="inicio.html" class="back-link">← Volver al inicio</a>
+                <button type="button" class="btn-cerrar-sesion" id="btnCerrarSesionCuenta">Cerrar sesión</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <ul class="footer-nav">
+            <li><a href="informacion.html">Sobre nosotros</a></li>
+            <li><a href="informacion.html">Privacidad</a></li>
+            <li><a href="informacion.html">Ayuda</a></li>
+        </ul>
+        <p class="footer-copy">&copy; 2026 Clio · Bienestar digital</p>
+    </footer>
+
+    <script src="../js/cuenta.js"></script>
+    <script src="../js/auth-ui.js"></script>
+</body>
+</html>
